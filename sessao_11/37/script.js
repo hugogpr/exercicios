@@ -23,7 +23,27 @@ class Itens{
         this.valorT = valorT;
     }
 
-}
+}/* com json
+class Carrinho{
+    constructor(itens){
+        this.lista = [JSON.stringify(itens)];
+    }
+    get getLista(){
+        return this.lista;
+    };
+    add(itens){
+        this.lista.push(JSON.stringify(itens));
+    };
+    remove(itens){
+        let veri = JSON.stringify(itens);
+
+        if(this.lista.includes(veri)){
+            this.lista.pop(veri);
+        }
+        
+    };
+
+} */
 class Carrinho{
     constructor(itens){
         this.lista = [itens];
@@ -31,20 +51,27 @@ class Carrinho{
     get getLista(){
         return this.lista;
     };
-    add(item){
-        this.lista.push(item);
+    add(itens){
+        this.lista.push(itens);
     };
-    remove(nome){
-        if(this.lista.include(nome)){
-            this.lista.pop(item);
+    remove(itens){
+        if(this.lista.includes(itens)){
+            this.lista.pop(itens);
         }
         
     };
 
 }
+
 let a = new Itens('melancia',5,50);
 let b = new Itens('maça',10,7.99);
+let c = new Itens('maça',10,7.99);
 let carrinho = new Carrinho(a);
 carrinho.add(b);
 console.log(carrinho.getLista)
+console.log('\n');
 
+carrinho.remove(b);
+
+console.log(carrinho.getLista)
+console.log('\n');
