@@ -7,7 +7,8 @@
     \W - Caractere não-alfanumerico
     \S - Caractere que não seja espaço em branco
     . - Qualquer caractere, menos nova linha.
- 
+    
+    \b - Quando quiser determinar o final
 */
 
 const pontoRegex = /./;
